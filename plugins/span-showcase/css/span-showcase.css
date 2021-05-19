@@ -1,0 +1,122 @@
+:root {
+  --lightHead: #505050;
+  --darkHead: #c94d4d;
+  --lightGround: lightgray;
+  --lightGroundHover: #e8e8e8;
+  --buttonGround: #606060;
+  --buttonGroundHover: #408080;
+  --subButtonGround: #206060;
+  --subButtonGroundHover: #408080;
+  --boxwidth: 430px;
+  --extraHeadPicsLeft: 720px;
+}
+
+.topBanner {
+  position: fixed;
+  top: 150px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.sectionbody {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.itemimg {
+  width: 250px;
+  float: left;
+  padding-right: 6px;
+}
+
+.item {
+  position: relative;
+  width: var(--boxwidth);
+  height: 190px;
+  overflow: hidden;
+  padding: 0px 6px 10px 6px;
+  margin: 2px;
+  background-color: #e8e8e8;
+  border-radius: 10px;
+  user-select: none;
+  font-size: 11pt;
+}
+
+.linkicon {
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+h3 {
+  font-size: 14pt;
+  color: var(--darkHead);
+}
+
+h2 {
+  font-size: 30pt;
+  color: var(--lightHead);
+}
+
+.sectionhead {
+  position: relative;
+  right: 0px;
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin-top: 6px;
+  background-color: --var(lightGround);
+  cursor: pointer;
+}
+
+.sectionhead:hover {
+  background-color: var(--lightGroundHover);
+}
+
+.sectionhead > div {
+  width: var(--boxwidth);
+  margin-left: 10px;
+}
+
+.subhead {
+  width: var(--boxwidth);
+  padding-left: 5px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  bottom: 0px;
+}
+
+.subhead img {
+  width: 250px;
+}
+
+.expander {
+  right: 20px;
+  position: absolute;
+  width: 100%;
+}
+
+.expander img {
+  width: 50px;
+  height: auto;
+  float: right;
+  transition: transform 0.5s ease-in-out;
+}
+
+.collapse {
+  transform: rotate(180deg);
+}
+
+.extraHeadPics {
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  left: var(--extraHeadPicsLeft);
+  height: 200px;
+  right: 0px;
+  overflow: hidden;
+}
+#list {
+  padding: 0 30px;
+}

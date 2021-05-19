@@ -1,0 +1,256 @@
+<style>
+    :root {
+        --lightHead: #505050;
+        --darkHead: #c94d4d;
+        --lightGround: lightgray;
+        --lightGroundHover: #e8e8e8;
+        --buttonGround: #606060;
+        --buttonGroundHover: #408080;
+        --subButtonGround: #206060;
+        --subButtonGroundHover: #408080;
+        --boxwidth: 430px;
+        --extraHeadPicsLeft: 720px;
+    }
+
+    .topBanner {
+        position: fixed;
+        top: 150px;
+        right: 10px;
+        cursor: pointer;
+    }
+
+    .sectionbody {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .itemimg {
+        width: 250px;
+        float: left;
+        padding-right: 6px;
+    }
+
+    .item {
+        position: relative;
+        width: var(--boxwidth);
+        height: 190px;
+        overflow: hidden;
+        padding: 0px 6px 10px 6px;
+        margin: 2px;
+        background-color: #e8e8e8;
+        border-radius: 10px;
+        user-select: none;
+        font-size: 11pt;
+    }
+
+    .linkicon {
+        display: block;
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+    }
+
+    h3 {
+        font-size: 14pt;
+        color: var(--darkHead);
+    }
+
+    h2 {
+        font-size: 30pt;
+        color: var(--lightHead);
+    }
+
+    .sectionhead {
+        position: relative;
+        right: 0px;
+        display: flex;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        margin-top: 6px;
+        background-color: --var(lightGround);
+        cursor: pointer;
+    }
+
+    .sectionhead:hover {
+        background-color: var(--lightGroundHover);
+    }
+
+    .sectionhead>div {
+        width: var(--boxwidth);
+        margin-left: 10px;
+    }
+
+    .subhead {
+        width: var(--boxwidth);
+        padding-left: 5px;
+        padding-right: 20px;
+        box-sizing: border-box;
+        bottom: 0px;
+    }
+
+    .subhead img {
+        width: 250px;
+    }
+
+    .expander {
+        right: 20px;
+        position: absolute;
+        width: 100%;
+    }
+
+    .expander img {
+        width: 50px;
+        height: auto;
+        float: right;
+    }
+
+    .extraHeadPics {
+        display: inline-block;
+        position: absolute;
+        top: 0px;
+        left: var(--extraHeadPicsLeft);
+        height: 200px;
+        right: 0px;
+        overflow: hidden;
+    }
+    #list {
+      padding: 0 20px;
+    }
+</style>
+
+
+<!-- ---- showcase.htm ---- -->
+
+<script>
+
+/**
+ * Short for getElementById
+ * @param {string} id
+ */
+function g(id) { return document.getElementById(id); }
+
+/**
+ * Find an existing DOM element or create one
+ * @param {*} typeName HTML element type - div etc
+ * @param {*} className CSS class or space-separated classes
+ * @param {*} id ID of existing element to find or new element to create
+ * @param {*} parent append to children of this element
+ * @param {*} insertAt (optional) insert before this child
+ */
+function getOrCreate(typeName, className, id, parent, insertAt) {
+    let thing = g(id);
+    if (thing) return thing;
+    thing = document.createElement(typeName);
+    thing.id = id;
+    if (className) {
+        thing.className = className;
+    }
+    parent.insertBefore(thing, insertAt);
+    return thing;
+}
+/**
+ * Prepend Span URL if prefix not specified
+ * @param {*} u 
+ */
+function imgUrl(u) {
+    if (u.indexOf("http") == 0 || u.indexOf("./") == 0) return u;
+    else return "https://www.span-arts.org.uk/wp-content/uploads/" + u;
+}
+function locUrl(u) {
+    if (u.indexOf("http") == 0 || u.indexOf("./") == 0) return u;
+    else return "https://www.span-arts.org.uk/" + u;
+}
+
+
+
+    const srcUrl = "https://www.span-arts.org.uk/news/";
+    jQuery(function () {
+        let tagLists = {};
+        const list = getOrCreate("div", null, "list", document.body);
+        fetch("/showcase-data/summaries.txt")
+            .then(r => r.json())
+            .then(top => {
+
+                top.items.forEach(item => {
+                    let url = item.chunk ? srcUrl + item.id : "#";
+                    let img = item.img ? `<img class="itemimg" src="${imgUrl(item.img)}"/>` : "";
+                    let script = `<a href="${url}" target="_new">${img}<img src="/showcase-data/img/link.png" class="linkicon"/></a><h3>${item.t}</h3>${item.chunk.replace(/<.*/, "")}`;
+                    if (item.tags) {
+                        item.tags.forEach(tag => {
+                            if (!tagLists[tag]) tagLists[tag] = [];
+                            tagLists[tag].push({ s: script, i: item.img });
+                        });
+                    } else {
+                        if (!tagLists["new"]) tagLists["new"] = [];
+                        tagLists["new"].push({ s: script, i: item.img });
+                    }
+
+                });
+                let offset = 0;
+                for (let tag in top.tags) {
+
+                    let tagList = tagLists[tag];
+                    let extraHeadPics = "";
+                    for (let ix = 0; ix < Math.min(5, tagList.length); ix++) {
+                        let index = (ix + offset) % tagList.length;
+                        if (tagList[index].i != top.tags[tag].i) {
+                            extraHeadPics += `<img src="${imgUrl(tagList[index].i)}"/>`;
+                        }
+                    }
+                    let script = `<div id="s${tag}" onclick="toggle('${tag}')"  class='sectionhead'>` +
+                        `<div><h2>${top.tags[tag].h}</h2>${top.tags[tag].p}</div>` +
+                        `<div class="subhead"><img src="${imgUrl(top.tags[tag].i)}"/>` +
+                        `<div class='extraHeadPics'>${extraHeadPics}</div></div>` +
+                        `<div class="expander"><img id="i${tag}" src="/showcase-data/img/expand.png"/></div></div>`;
+                    script += `<div class='sectionbody' style="display:none" id='${tag}'>`;
+                    tagList.forEach(item => {
+                        script += `<div class="item">${item.s}</div>`;
+                    });
+                    script += "</div>";
+                    let section = document.createElement("section");
+                    section.innerHTML = script;
+                    list.append(section);
+                    offset += 7;
+                };
+            });
+    });
+
+    function collapse(section) {
+        section.expanded = false;
+        section.style.display = "none";
+        g("i" + section.id).src = "/showcase-data/img/expand.png";
+    }
+    function expand(section) {
+        section.expanded = true;
+        section.style.display = "flex";
+        g("i" + section.id).src = "/showcase-data/img/collapse.png";
+        g("s" + section.id).scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    function toggle(tag) {
+        let section = g(tag);
+        if (section.expanded) {
+            collapse(section);
+        } else {
+            expand(section);
+        }
+    }
+    function collapseAll() {
+        document.querySelectorAll(".sectionbody").forEach(s => {
+            if (s.expanded) {
+                collapse(s);
+            }
+        });
+        window.scrollTo(0, 0);
+    }
+
+</script>
+
+
+<!-- ---- showcase.htm ---- -->
+
+<section>
+    <div id="list"></div>
+    <div class="topBanner">
+        <img src="/showcase-data/img/collapseall.png" style="height:40px;width: auto;" onclick="collapseAll()">
+    </div>
+</section>

@@ -1,0 +1,43 @@
+
+        .mapFrameGrid {
+            display: grid;
+            justify-content: space-between;
+            grid-template-columns: repeat(auto-fill, minmax(45vmax, 1fr));
+            grid-template-rows: repeat(auto-fill, minmax(45vmax, 1fr));
+        }
+
+        .mapFrameGrid>div {
+            position: relative;
+            padding: 6px;
+            margin: 10px;
+            min-height: 40vh;
+            max-height: 90vh;
+        }
+
+        .mapFrame {
+            max-height: 90vh;
+            min-width: 40vw;
+            width: 100%;
+            min-height: 50vh;
+            height: 100%;
+        }
+
+        .mapFrameContent {
+            overflow: auto;
+        }
+
+        .mapFrameLink {
+            color: royalblue;
+            background-color: aliceblue;
+            cursor: pointer;
+        }
+
+        .header-image {
+            max-width: 1280px;
+        }
+        #page {
+            max-width: unset;
+        }
+        .inner-wrap {
+            max-width: unset;
+        }

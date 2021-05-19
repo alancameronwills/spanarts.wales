@@ -1,0 +1,26 @@
+<script id="ticketsolve-iframe-config">
+    (function (d) {
+        var config = {
+            ticketsolveUrl: 'https://span-arts.ticketsolve.com',
+            redirectCookie: 'cookie-redirect',
+            iframe: 'ticketsolve-iframe',
+            cartCount: 'ticketsolve-cart-count',
+            header: '#header',
+            footer: '#footer',
+        },
+            g = document.createElement("script"),
+            s = document.getElementsByTagName("script")[0],
+            f = !1;
+        g.src = "https://d235gwso45fsgz.cloudfront.net/ticketbooth/iframe-handling.js",
+            g.type = "text/javascript",
+            g.async = "true",
+            g.onload = g.onreadystatechange = function () {
+                var e = this.readyState;
+                if (!(f || e && "complete" != e && "loaded" != e)) {
+                    f = !0;
+                    try { TicketsolveIframe.load(config) } catch (t) { }
+                }
+            },
+            s.parentNode.insertBefore(g, s);
+    }(document));
+</script>

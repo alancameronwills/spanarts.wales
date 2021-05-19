@@ -1,0 +1,1027 @@
+.wpb_gallery_slides.wpb_flexslider.flexslider_fade.flexslider {
+  margin: 0;
+}
+
+.buttonrow p {
+  padding: 10px;
+}
+.buttonrow a {
+  color: #4f4f4f !important;
+}
+.buttonrow a:hover {
+  color: darkblue !important;
+}
+.buttonrow p:hover {
+  box-shadow: 3px 3px 2px #4f4f4f;
+}
+
+.title_outer {
+  padding-bottom: 8px;
+}
+
+ul {
+  /*fix Bridge nonsense */
+  list-style-position: outside !important;
+  padding: 0 0 0 20px !important;
+}
+
+ul.boxlist {
+  padding: 0 !important;
+}
+
+.datelist ul {
+  list-style: none;
+  margin-left: 60px;
+  text-indent: -60px;
+}
+
+.datelist li {
+  margin: 6px 0px;
+}
+.datelist strong:first-of-type {
+  background-color: #808080; /* #33b0f0; */
+  color: white;
+  padding: 2px 6px;
+}
+
+.span-button {
+  line-height: 40px;
+  height: 40px;
+  background-color: white;
+  margin: 10px 0;
+  padding: 0 40px;
+  color: #4f4f4f !important;
+}
+.span-button.right {
+  float: right;
+}
+.span-button:hover {
+  box-shadow: 3px 3px 2px #4f4f4f;
+  color: darkblue !important;
+}
+
+#menu-left_menu {
+  margin-top: 1px;
+}
+#menu-left_menu a:hover {
+  color: black !important;
+}
+
+#menu-left_menu span:hover {
+  color: black !important;
+}
+
+.wpml-ls-legacy-list-horizontal {
+  margin-top: -1px;
+  padding: 0;
+}
+
+.wpml-ls-legacy-list-horizontal a {
+  padding: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.q_elements_holder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.q_elements_item {
+  padding: 0 4px 10px 4px;
+  margin: 2px 2px 10px 2px;
+  width: 24% !important;
+  min-width: 300px;
+  height: auto !important;
+}
+.q_elements_item h1 {
+  margin-top: 5px !important;
+}
+.section.vc_row:not(.vc_inner) {
+  margin: 0 20px 20px 20px;
+}
+
+.boxcolumns .vc_single_image-wrapper.vc_box_border_grey {
+  width: 100%;
+}
+.boxcolumns img.vc_single_image-img.attachment-medium {
+  width: 98%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.boxcolumns .vc_column-inner > .wpb_wrapper {
+  margin: 5px 0;
+}
+
+.boxcolumns .vc_column-inner {
+  background-color: white;
+  cursor: pointer;
+}
+
+.boxcolumns.showSomeBelow .vc_column-inner:not(.expanded) {
+  height: 450px;
+  max-height: 450px;
+  overflow-y: hidden;
+}
+
+/* Gray tailoff at bottom of box with chevron */
+.boxcolumns.showSomeBelow .vc_column-inner:not(.expanded) > div::after {
+  font-family: "FontAwesome";
+  content: "\f078";
+  color: lightgray;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  text-align: right;
+  margin: 5px 5px 5px 5px;
+  background: linear-gradient(0, white, transparent);
+}
+
+/* Up chevron in expanded box */
+.boxcolumns.showSomeBelow .vc_column-inner.expanded > div::after {
+  font-family: "FontAwesome";
+  content: "\f077";
+  color: lightgray;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  text-align: right;
+  margin: 5px;
+  pointer-events: none;
+}
+
+.showSomeBelow .eventItem,
+.showSomeBelow .wpb_column {
+  transition: all 0.5s ease-in-out;
+}
+
+.showSomeBelow .eventItem:hover,
+.showSomeBelow .wpb_column:hover {
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.1);
+  transform: scale(1.01, 1.01);
+}
+
+/*
+.vc_row.wpb_row.section.vc_row-fluid.boxcolumns {
+padding-bottom: 10px;
+padding-top: 10px;
+}
+*/
+
+.vc_column_container {
+  overflow-y: hidden;
+}
+
+.boxcolumns .wpb_column.vc_column_container {
+  padding: 10px 5px 10px 5px;
+}
+
+.boxcolumns h1 {
+  margin-top: 10px !important;
+}
+.hide {
+  display: none;
+}
+
+.bigheads .vc_column-inner {
+  padding: 0 !important;
+}
+
+.bigheads.vc_row {
+  padding: 0 !important;
+  margin: 0px 0 6px 0 !important;
+}
+
+section.bigheads {
+  padding: 0 !important;
+  margin: 0px 0 6px 0 !important;
+}
+
+.darkstripe .wpb_text_column {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.bigheads .wpb_text_column {
+  padding: 0 2vw 10px 2vw;
+  margin: 60px 0 50px 0 !important;
+}
+
+.bigheads .n2-section-smartslider {
+  position: absolute;
+  z-index: -20;
+  margin-top: -60px !important;
+}
+
+.bigheads h1 {
+  font-size: 8vw;
+  color: white;
+}
+.bigheads h2 {
+  font-size: 3vw;
+  margin-left: 10px;
+  color: white;
+}
+.bigheads h3 {
+  font-size: 2vw;
+  margin-left: 10px;
+  color: white;
+}
+
+h1:not(.blockhead) {
+  margin-top: 30px;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+h3 {
+  margin-top: 16px;
+  font-size: 18pt !important;
+}
+
+h4 {
+  margin-top: 10px;
+  font-size: 16pt !important;
+}
+h5 {
+  font-size: 14pt !important;
+  margin: 6px 0;
+}
+
+p {
+  font-size: 12pt;
+  line-height: 150% !important;
+  margin-top: 6px;
+}
+
+.blocktext {
+  /*background-color: #808080;*/
+  padding: 10px 10px;
+}
+
+.blocktext p,
+.blocktext ul {
+  /*color: white;*/
+  font-size: 16px;
+}
+.blocktext ul {
+  padding-left: 20px !important;
+}
+
+.header_top > .left {
+  float: right !important;
+  margin-right: 6px;
+}
+
+/* ==== HEADER FIXES ===== */
+
+@media (min-width: 1000px) {
+  .header_top {
+    padding-right: 45px;
+  }
+}
+
+.topLeftButton {
+  height: 32px;
+  line-height: 32px;
+  padding: 0 10px;
+  color: #808080;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Expand the social icons */
+.qode_icon_font_awesome {
+  font-size: 18px !important;
+}
+
+/* Custom social icon - png needs to be uploaded */
+.socialButtonAM {
+  width: 32px;
+  height: 32px !important;
+  background-image: url("/wp-content/themes/bridge-span/img/am-lg.png");
+  background-color: transparent !important;
+  padding: 0 !important;
+}
+.socialButtonAM:hover {
+  background-image: url("/wp-content/themes/bridge-span/img/am-bg.png");
+}
+
+/* Expand the logo in the header without expanding the header */
+.q_logo img.normal {
+  transform: translate(-10px, -1px);
+  top: -56%;
+}
+
+.content a {
+  color: #4040e0;
+}
+
+.post_content_holder .post_image img {
+  max-height: 40vh;
+  object-fit: contain;
+}
+
+.post_categories {
+  display: none;
+}
+
+/* ==== Coloured headers ==== */
+
+/* JS assigns colours to eventItems on load */
+.colour0 .eventTitle {
+  color: #33b0f0;
+}
+.colour1 .eventTitle {
+  color: #ff8419;
+}
+.colour2 .eventTitle {
+  color: #ff4040;
+}
+
+/*
+.colour0 .eventDescription {
+outline: 1px solid #33b0f0;
+}
+.colour1 .eventDescription {
+outline: 1px solid #ff8419;
+}
+.colour2 .eventDescription {
+outline: 1px solid #ff4040;
+}
+*/
+h2.colour0 {
+  color: #33b0f0 !important;
+}
+h2.colour1 {
+  color: #ff8419 !important;
+}
+h2.colour2 {
+  color: #ff4040 !important;
+}
+
+h3.colour0 {
+  color: #33b0f0 !important;
+}
+h3.colour1 {
+  color: #ff8419 !important;
+}
+h3.colour2 {
+  color: #ff4040 !important;
+}
+
+h4.colour0 {
+  color: #33b0f0 !important;
+}
+h4.colour1 {
+  color: #ff8419 !important;
+}
+h4.colour2 {
+  color: #ff4040 !important;
+}
+
+h1:not(.ls-layer).colour0 {
+  color: #33b0f0 !important;
+}
+h1:not(.ls-layer).colour1 {
+  color: #ff8419 !important;
+}
+h1:not(.ls-layer).colour2 {
+  color: #ff4040 !important;
+}
+
+.full_width_inner > div > .full_section_inner {
+  margin: 0 2vw;
+}
+
+.bigheads .full_section_inner {
+  margin: 0 !important;
+}
+
+/* Set this during clicked scroll in .horizontal .eventList.
+But don't set while dragging - bad effect.
+*/
+.smoothie {
+  scroll-behavior: smooth;
+}
+
+/*                   */
+/* ==== Box lists  ==== */
+/*                   */
+
+/* Top class for UL of event boxes - add-ons are .eventList .showAllBelow and .staff */
+.boxlist {
+  display: flex;
+  list-style-type: none;
+  justify-content: left;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.boxlist::-webkit-scrollbar {
+  display: none;
+}
+
+/* Mixins for .boxlist */
+.showAllBelow,
+.showSomeBelow,
+.staff {
+  flex-wrap: wrap;
+}
+
+.staff .eventTitle {
+  position: absolute;
+  bottom: 30px;
+  left: 10px;
+  color: whitesmoke;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 0 10px;
+}
+.staff .eventItem img {
+  height: 300px;
+}
+.staff .eventItem {
+  max-height: 330px;
+}
+
+ul:not(.showSomeBelow):not(.showAllBelow) .eventItem {
+  max-width: 300px;
+}
+
+.eventItem {
+  margin: 20px 10px 0 0px;
+  list-style: none;
+  position: relative;
+  cursor: pointer;
+  font-size: 12pt;
+  background-color: white;
+  box-shadow: 0px 2px 2px 0 #d1d5d6; /* p3=-1 for just line at bottom */
+}
+
+.staff .eventItem {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.eventTitle {
+  font-size: 14pt;
+  margin: 6px 0;
+}
+.eventList .subtitle {
+  font-size: 11pt;
+  margin-bottom: 2px;
+}
+
+.showAllBelow .eventTitle {
+  font-size: 24pt;
+}
+.showAllBelow .subtitle {
+  font-size: 16pt;
+}
+
+.showSomeBelow .eventTitle {
+  font-size: 24pt;
+}
+.showSomeBelow .subtitle {
+  font-size: 16pt;
+}
+
+.eventItem img {
+  width: 100%;
+  min-width: 300px; /* Must use space */
+  height: 230px;
+  object-fit: cover;
+  display: block;
+}
+.showAllBelow .eventItem img {
+  object-fit: contain;
+}
+/* bottom of img */
+.eventBooking {
+  position: absolute;
+  top: 205px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 0 10px;
+}
+.showAllBelow .eventItem img {
+  height: 300px;
+}
+
+.showAllBelow .eventContent {
+  background-color: #f0f0f0;
+  padding: 6px 0;
+}
+
+.showSomeBelow .eventItem img {
+  height: 300px;
+}
+
+.showSomeBelow .eventContent {
+  background-color: #f0f0f0;
+  padding: 6px 0;
+}
+
+.eventList .eventContent {
+  border-left: 10px solid white;
+  background-color: white;
+  min-width: 290px;
+}
+.eventList .eventContent {
+  margin-bottom: 10px !important;
+}
+.eventList:not(.horizontal) .eventContent {
+  min-height: 100px;
+}
+.eventLocation {
+  font-weight: bold;
+}
+
+.eventContent * {
+  line-height: 1.2em;
+  padding-bottom: 0.1em;
+}
+
+/* Content text is hidden by default. Covers image when showing. */
+.eventDescription {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0px;
+  padding: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: white;
+  opacity: 0.9;
+  transition: height 0.5s ease-in-out;
+  visibility: hidden;
+  height: 0px;
+}
+/* Fade at bottom of description */
+.eventDescription::after {
+  content: " ";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(0, white, transparent);
+}
+.showAllBelow .eventDescription {
+  position: relative;
+  font-size: 12pt;
+  width: 27vw;
+  visibility: visible;
+  height: unset;
+}
+.showAllBelow .eventDescription::after {
+  display: none;
+}
+
+.showSomeBelow .eventDescription {
+  position: relative;
+  font-size: 12pt;
+  width: 27vw;
+  visibility: visible;
+  height: unset;
+  max-height: 300px;
+}
+
+.eventDate {
+  margin-top: 4px;
+}
+
+/*                                  */
+/* ==== Bridge Image shortcode ==== */
+/*                                  */
+
+.image_with_text {
+  display: block;
+  width: 300px;
+  margin-top: 20px;
+  text-align: left;
+  font-size: 12pt;
+  line-height: 1.2;
+}
+.image_with_text img {
+  margin: 0;
+  height: 230px;
+  width: 300px;
+  min-width: 300px; /* Must use space */
+  object-fit: cover;
+}
+
+.image_text {
+  min-width: 290px;
+  max-width: 290px;
+  min-height: 100px;
+  background-color: white;
+  border-left: 10px solid white;
+}
+
+.image_with_text .separator {
+  display: none;
+}
+
+/* "More" pointers */
+.narrowonly {
+  text-align: right;
+}
+
+@media not hover {
+  .eventList {
+    flex-wrap: wrap;
+    justify-content: left;
+  }
+}
+
+@media (hover: hover) {
+  /* Show description on hover, but not while dragging slider */
+  .eventList:not(.ui-draggable-dragging) .eventItem:hover .eventDescription {
+    height: 230px;
+    visibility: visible;
+  }
+  .staff .eventItem:hover .eventDescription {
+    height: 230px;
+    visibility: visible;
+  }
+} /* @media (hover:hover) */
+
+@media (min-width: 1000px) {
+  .topgap {
+    margin-top: 100px;
+  }
+
+  div.header-widget.widget_icl_lang_sel_widget.header-left-widget {
+    display: none;
+  }
+  .narrowonly {
+    display: none;
+  }
+  .three_columns .wpb_wrapper {
+    width: 300px;
+    margin: 0 auto;
+  }
+  .image_with_text {
+    min-height: 340px;
+  }
+
+  .lowerbanner h1 {
+    font-size: 48px;
+    color: white;
+  }
+  .lowerbanner {
+    margin: 150px auto;
+  }
+
+  /*                   */
+  /* ==== Box lists  ==== */
+  /*                   */
+  .eventList.horizontal {
+    flex-wrap: nowrap;
+    justify-content: normal;
+    overflow-x: auto;
+    padding: 0 !important;
+  }
+  .eventList:not(.horizontal) .eventItem {
+    min-height: 340px;
+  }
+  .staff .eventItem {
+    min-height: 300px;
+  }
+
+  .boxlist .postDate {
+    bottom: 0;
+    right: 4px;
+    font-size: small;
+    font-style: italic;
+    position: absolute;
+  }
+
+  /* Horizontal scroller */
+
+  /*
+.sa_scrollButton {
+  font-size: 32px;
+  font-weight: bold;
+  position: absolute;
+  top: 100px;
+  width: 40px;
+  height: 40px;
+  color: rgb(196, 196, 196);
+  pointer-events: none;
+  border: 3px solid rgb(196, 196, 196);
+  box-shadow: 0 0 0 2px #ffc491;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  user-select: none;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 40px;
+}
+*/
+
+  .sa_scrollButton {
+    font-size: 32px;
+    font-weight: bold;
+    position: absolute;
+    top: 90px;
+    width: 30px;
+    height: 60px;
+    color: rgb(196, 196, 196);
+    cursor: pointer;
+    /*border: 3px solid rgb(196, 196, 196);
+  box-shadow: 0 0 0 2px rgb(255,255,255);*/
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 0;
+    user-select: none;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 60px;
+  }
+
+  .sa_scrollerLeft {
+    left: auto;
+    right: 0;
+    margin-right: -15px;
+  }
+  .sa_scrollerRight {
+    left: 0;
+    right: auto;
+    margin-left: -15px;
+  }
+  .sa_horizontal_activities {
+    position: relative;
+  }
+} /* @media (min-width: 1000px) */
+
+@media (max-width: 1000px) {
+  .header_bottom {
+    padding: 0 0 6px 3vw !important;
+  }
+
+  div.title.title_size_large {
+    display: none;
+  }
+
+  /* Reduce space taken by mobile header */
+  .header_top {
+    height: 20px !important;
+  }
+
+  /* Suppress topmost menu */
+  .header-widget.widget_nav_menu.header-right-widget {
+    display: none;
+  }
+  .header_inner_right .side_menu_button_wrapper .side_menu_button {
+    height: unset !important;
+    padding: 10px;
+  }
+  .qode_search_field {
+    color: white;
+  }
+
+  /* Logo at left side */
+  .logo_wrapper {
+    left: 0 !important;
+  }
+  .q_logo {
+    vertical-align: top !important;
+  }
+  .q_logo > a {
+    left: 0 !important;
+    height: 60px !important;
+  }
+  /* Menu button at right sitde */
+  .mobile_menu_button {
+    height: 60px;
+    float: right;
+  }
+
+  /* Keep rows and columns neatly in screen */
+  .vc_row {
+    margin: 0;
+  }
+  .section.vc_row {
+    margin: 0;
+  }
+  .vc_column-inner {
+    padding: 0;
+  }
+  .vc_column_container > .vc_column-inner {
+    padding-right: 0 !important;
+  }
+
+  /* "More" pointers */
+  .wideonly {
+    display: none;
+  }
+  .vc_col-sm-8 {
+    width: 100% !important;
+  }
+  .lowerbanner h1 {
+    font-size: 18px;
+    color: white;
+  }
+  .lowerbanner {
+    margin: 50px auto;
+  }
+  .blockhead .wpb_wrapper {
+    width: 100%;
+    margin: 20px 10px 0px 10px;
+  }
+
+  /* No horizontal scroller */
+  .scrollButton {
+    display: none;
+  }
+  .sa_scrollButton {
+    display: none;
+  }
+
+  /*                      */
+  /* ==== Box lists  ==== */
+  /*                      */
+
+  /* Side-by-side display */
+  ul:not(.showSomeBelow):not(.showAllBelow) .eventItem {
+    max-width: 620px;
+    min-width: 620px;
+  }
+
+  .eventItem {
+    display: flex;
+    max-width: 600px;
+    width: 600px;
+    margin: 20px auto 0 auto;
+    max-height: 230px;
+    overflow: hidden;
+  }
+  .showAllBelow .eventItem {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-height: 900px;
+  }
+
+  .showSomeBelow .eventItem {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-height: 900px;
+  }
+
+  .eventDescription {
+    position: relative;
+    visibility: visible;
+    height: auto;
+  }
+
+  .showAllBelow .eventContent {
+    background-color: white;
+    padding: 6px;
+  }
+
+  .showAllBelow .eventDescription {
+    display: block;
+    width: 600px;
+  }
+
+  .showSomeBelow .eventContent {
+    background-color: white;
+    padding: 6px;
+  }
+
+  .showSomeBelow .eventDescription {
+    display: block;
+    width: 600px;
+  }
+
+  /* Put fader on content instead of description 
+   Because description is now floating under title */
+  .eventDescription::after {
+    display: none;
+  }
+  .eventContent::after {
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 300px;
+    right: 0;
+    height: 40px;
+    background: linear-gradient(0, white, transparent);
+  }
+  .showAllBelow .eventContent::after {
+    display: none;
+  }
+
+  .showSomeBelow .eventContent::after {
+    display: none;
+  }
+
+  .image_with_text {
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    max-width: 600px;
+    margin: 20px auto 0 auto;
+  }
+} /* End max-width:1000px */
+
+@media (max-width: 750px) {
+  /*                   */
+  /* ==== Padding ==== */
+  /*                   */
+  .vc_column-inner {
+    padding-left: 0 !important;
+  }
+  h1 {
+    padding-left: 10px;
+  }
+  div.section {
+    padding-left: 0;
+  }
+
+  /*                   */
+  /* ==== Headings === */
+  /*                   */
+  .bigheads h1 {
+    font-size: 36pt;
+  }
+  .bigheads h2 {
+    font-size: 30pt;
+  }
+  .bigheads h3 {
+    font-size: 24pt;
+  }
+  .bigheads h4 {
+    font-size: 18pt;
+  }
+
+  /*                   */
+  /* ==== Box lists  ==== */
+  /*                   */
+
+  /* Undo side box used in max-width:1000 */
+  ul:not(.showSomeBelow):not(.showAllBelow) .eventItem {
+    max-width: 580px;
+    min-width: 300px;
+    width: 90vw;
+  }
+
+  .eventItem {
+    display: block;
+    max-width: 300px;
+    min-width: unset;
+    max-height: 400px;
+  }
+  .showAllBelow .eventItem {
+    max-height: 900px;
+  }
+  .showSomeBelow .eventItem {
+    max-height: 600px;
+  }
+
+  .eventContent {
+    min-height: 20px !important;
+  }
+
+  /* Fading at bottom */
+  .eventContent::after {
+    left: 0;
+  }
+  .staff .eventContent::after {
+    display: none;
+  }
+  .showAllBelow .eventContent::after {
+    display: none;
+  }
+  .showSomeBelow .eventContent::after {
+    display: none;
+  }
+
+  ul.staff .eventDescription {
+    visibility: hidden;
+  }
+
+  .showAllBelow .eventDescription {
+    width: 95%;
+    visibility: visible;
+  }
+  .showSomeBelow .eventDescription {
+    width: 95%;
+    visibility: visible;
+  }
+
+  .showSomeBelow .eventContent::after {
+    display: none;
+  }
+
+  .image_with_text {
+    width: 300px;
+  }
+} /* End max-width:600px */
