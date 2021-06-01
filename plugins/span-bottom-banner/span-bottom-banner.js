@@ -3,10 +3,10 @@ function spanAddBanner() {
     if (jQuery("#spanBetaBanner").length) return;
 	let pp = window.location.pathname.match(/\/cy\//) 
 		? ["Hoffi'n gwefan newydd?", 
-        "Mae'n dal i gael ei ddatblygu ...", 
-        "Rhowch wybod i ni beth 'dych chi'n feddwl!"]
+		   "Mae'n dal i esblygu ...", 
+		   "Rhowch wybod i ni beth 'dych chi'n feddwl!"]
 		: ["Like our new website?", 
-		   "It's still being developed ...", 
+		   "It's still evolving ...", 
 		   "Let us know what you think!"];
     let css = jQuery("<style>#spanBetaBanner {position:fixed;display:flex;flex-wrap:wrap;justify-content:space-around;width:100%;bottom:0px;left:0px;" 
     + "background-color:aliceblue;color:gray;z-index:1000; line-height:2em;text-align:center;" 
