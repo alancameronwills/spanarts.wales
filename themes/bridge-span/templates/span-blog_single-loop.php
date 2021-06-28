@@ -34,15 +34,16 @@ $bridge_qode_post_format = get_post_format();
 <?php
 	switch ($bridge_qode_post_format) {
 		case "video":
+			$video_link = span_extract_youtube_id(get_post_meta(get_the_ID(), "video_format_link", true));
 ?>
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<div class="post_content_holder">
 				<div class="post_image">
 					<?php $bridge_qode_video_type = get_post_meta(get_the_ID(), "video_format_choose", true);?>
-					<?php if($bridge_qode_video_type == "youtube") { ?>
-						<iframe name="fitvid-<?php the_ID(); ?>" src="//www.youtube.com/embed/<?php echo get_post_meta(get_the_ID(), "video_format_link", true);  ?>?wmode=transparent" wmode="Opaque" width="805" height="403" allowfullscreen></iframe>
+					<?php if($bridge_qode_video_type == "youtube") { ?><!-- nn -->
+						<iframe name="fitvid-<?php the_ID(); ?>" src="//www.youtube.com/embed/<?php echo $video_link;  ?>?wmode=transparent" wmode="Opaque" width="805" height="403" allowfullscreen></iframe>
 					<?php } elseif ($bridge_qode_video_type == "vimeo"){ ?>
-						<iframe name="fitvid-<?php the_ID(); ?>" src="//player.vimeo.com/video/<?php echo get_post_meta(get_the_ID(), "video_format_link", true);  ?>?title=0&amp;byline=0&amp;portrait=0" width="800" height="450" allowfullscreen></iframe>
+						<iframe name="fitvid-<?php the_ID(); ?>" src="//player.vimeo.com/video/<?php echo $video_link;  ?>?title=0&amp;byline=0&amp;portrait=0" width="800" height="450" allowfullscreen></iframe>
 					<?php } elseif ($bridge_qode_video_type == "self"){ ?> 
 						<div class="video"> 
 						<div class="mobile-video-image" style="background-image: url(<?php echo get_post_meta(get_the_ID(), "video_format_image", true);  ?>);"></div> 

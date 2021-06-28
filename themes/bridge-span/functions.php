@@ -133,6 +133,9 @@ if (SPAN_CUT_ADMIN_OPTIONS) {
   }
 }
 
+// To modify on save, add:
+// if ($key == "video_format_link") $value = span_extract_youtube_id($_POST[$key]); else
+// at or near line 429 of bridge/framework/qode-framework.php
 function span_extract_youtube_id($share_url)
 {
   if (!preg_match('#/#', $share_url)) {
@@ -185,7 +188,8 @@ add_action(
 );
 
 add_filter("final_output", function ($output) {
-  return str_replace("stage-span-arts", "STAGE-span-arts", $output);
+	$fulltext = $output;
+  return str_replace(["stage-span-arts.org.uk","STAGE-span-arts.org.uk"], ["span-arts.org.uk","span-arts.org.uk"], $fulltext);
 });
 
 ?>

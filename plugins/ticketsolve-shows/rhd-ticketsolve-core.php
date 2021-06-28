@@ -152,8 +152,8 @@ class RHD_TS_UpcomingShows
         if ($eventList->length > 1) {
 			// Not guaranteed in time order:
 			foreach ($eventList as $eventPath) {
-				$eventTime = strtotime(
-           			 trim($xpath->query("./date_time_iso", $eventPath)->item(0)->nodeValue));
+				$eventTime = timeFromString(
+           			 $xpath->query("./date_time_iso", $eventPath)->item(0)->nodeValue);
 				if ($thisshow['dtstart']==0 || $eventTime < $thisshow['dtstart']) {
 					$thisshow['dtstart'] = $eventTime;
 				}
@@ -162,8 +162,8 @@ class RHD_TS_UpcomingShows
 				}
 			}
         } else {
-        	$thisshow['dtstart'] = strtotime(
-          		trim($xpath->query("./date_time_iso", $eventPath)->item(0)->nodeValue));
+        	$thisshow['dtstart'] = timeFromString(
+          		$xpath->query("./date_time_iso", $eventPath)->item(0)->nodeValue);
           	$thisshow['dtend'] = null;
         }
 
@@ -233,13 +233,14 @@ class RHD_TS_UpcomingShows
     $xpath = new DOMXpath($doc);
 
     $event['id'] = trim($xpath->query("@id")->item(0)->nodeValue);
-    $event['dtstart'] = strtotime(
-      trim($xpath->query("//date_time")->item(0)->nodeValue)
-    );
+    $event['dtstart'] = timeFromString($xpath->query("//date_time")->item(0)->nodeValue);
     return $event;
   }
 }
 
+function timeFromString ($s) {
+  return strtotime(substr(trim($s), 0, 19));
+}
 
 
 function cmpByDate($a,$b) {
