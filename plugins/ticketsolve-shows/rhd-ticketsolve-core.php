@@ -358,7 +358,8 @@ function rhd_display($attributes = [])
   ob_start();
   ?>
 	<?php
-      rhd_upcomingshows("boxlist " . $topclass, $imgsize, $count, $cymraeg!='no', $paras, $compact!='no');
+      rhd_upcomingshows("boxlist " . $topclass, $imgsize, $count,
+       $cymraeg!='no', $paras, $compact!='no');
 	return ob_get_clean();
 }
 
