@@ -217,6 +217,7 @@ function span_print_activities(
   }
   ?>  <ul <?= ($id ? 'id="' . $id . '" ': '') ?>  class='<?= "boxlist " . $topclass . ($horizontal ? " horizontal" : "") ?>'> <?php
     if (count($activities) > 0):
+    $itemCount = 0;
     foreach ($activities as $item) {
         $tags = count($item['tags']) > 0 ? " " . implode(' ', $item['tags']) : "";
         $dataUrl =
@@ -224,7 +225,7 @@ function span_print_activities(
             ? ""
             : "data-url='" . $item['link'] . $locale . "'";
         ?>
-            <li class="eventItem <?= htmlentities($tags)?>" 
+            <li class="eventItem <?= $itemCount++>0 ? "afterOne" : "" ?> <?= htmlentities($tags)?>" 
              <?= $dataUrl ?>
              data-posted="<?= $item['postDate'] ?>"
             >
