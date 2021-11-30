@@ -17,6 +17,11 @@ add_action('admin_head', function () {
 });
 
 add_action('wp_enqueue_scripts', 'span_nqthemescript');
+
+
+
+
+
 function span_nqthemescript()
 {
   wp_enqueue_script(
@@ -80,6 +85,39 @@ function span_readmore($attributes = [])
   return ob_get_clean();
 }
 
+// Shortcode for Middle button
+add_shortcode("middle_button", "span_middle_button");
+function span_middle_button($attributes = [])
+{
+  extract(
+    shortcode_atts(
+      [
+        'url' => 'https://span-arts.ticketsolve.com/products/donation', // relative URL of page
+        'text' => 'Donate'
+      ],
+      $attributes
+    )
+  );
+
+  ob_start();
+
+  $target = stripos($url, "http") === 0 ? " target=_blank" : "";
+
+  if (stripos($url, "http") !== 0 && stripos($url, "/") !== 0) {
+    $url = "/" . $url;
+  }
+  echo "<a itemprop='url' href='" .
+    $url .
+    "'" .
+    $target .
+    "' >" .
+    "<div class='span-middle-button colour0'>" .
+    $text .
+    "</div></a>";
+
+  return ob_get_clean();
+}
+
 if (SPAN_CUT_ADMIN_OPTIONS) {
   function bridge_qode_meta_boxes_map_init()
   {
@@ -89,9 +127,9 @@ if (SPAN_CUT_ADMIN_OPTIONS) {
     //require_once( QODE_FRAMEWORK_ROOT_DIR . "/admin/meta-boxes/testimonials/map.php");
     //require_once( QODE_FRAMEWORK_ROOT_DIR . "/admin/meta-boxes/carousels/map.php");
     //require_once( QODE_FRAMEWORK_ROOT_DIR . "/admin/meta-boxes/masonry_gallery/map.php");
-    //require_once( QODE_FRAMEWORK_ROOT_DIR . "/admin/meta-boxes/general/map.php");
+    require_once( QODE_FRAMEWORK_ROOT_DIR . "/admin/meta-boxes/general/map.php");
     //require_once( QODE_FRAMEWORK_ROOT_DIR . "/admin/meta-boxes/portfolio/map.php");
-    //require_once( QODE_FRAMEWORK_ROOT_DIR . "/admin/meta-boxes/post/map.php");
+    require_once( QODE_FRAMEWORK_ROOT_DIR . "/admin/meta-boxes/post/map.php");
     require_once QODE_FRAMEWORK_ROOT_DIR .
       "/admin/meta-boxes/post/post-format-audio/map.php";
     require_once QODE_FRAMEWORK_ROOT_DIR .
@@ -102,14 +140,14 @@ if (SPAN_CUT_ADMIN_OPTIONS) {
       "/admin/meta-boxes/post/post-format-quote/map.php";
     require_once QODE_FRAMEWORK_ROOT_DIR .
       "/admin/meta-boxes/post/post-format-video/map.php";
-    //require_once( QODE_FRAMEWORK_ROOT_DIR . "/admin/meta-boxes/header/map.php");
-    //require_once( QODE_FRAMEWORK_ROOT_DIR . "/admin/meta-boxes/left-menu/map.php");
-    //require_once( QODE_FRAMEWORK_ROOT_DIR . "/admin/meta-boxes/footer/map.php");
-    //require_once( QODE_FRAMEWORK_ROOT_DIR . "/admin/meta-boxes/title/map.php");
-    //require_once( QODE_FRAMEWORK_ROOT_DIR . "/admin/meta-boxes/content-bottom/map.php");
-    //require_once( QODE_FRAMEWORK_ROOT_DIR . "/admin/meta-boxes/blog/map.php"); // pages that are of blog type
-    //require_once( QODE_FRAMEWORK_ROOT_DIR . "/admin/meta-boxes/sidebar/map.php");  // sidebar widget layout
-    //require_once( QODE_FRAMEWORK_ROOT_DIR . "/admin/meta-boxes/seo/map.php");
+    require_once( QODE_FRAMEWORK_ROOT_DIR . "/admin/meta-boxes/header/map.php");
+    require_once( QODE_FRAMEWORK_ROOT_DIR . "/admin/meta-boxes/left-menu/map.php");
+    require_once( QODE_FRAMEWORK_ROOT_DIR . "/admin/meta-boxes/footer/map.php");
+    require_once( QODE_FRAMEWORK_ROOT_DIR . "/admin/meta-boxes/title/map.php");
+    require_once( QODE_FRAMEWORK_ROOT_DIR . "/admin/meta-boxes/content-bottom/map.php");
+    require_once( QODE_FRAMEWORK_ROOT_DIR . "/admin/meta-boxes/blog/map.php"); // pages that are of blog type
+    require_once( QODE_FRAMEWORK_ROOT_DIR . "/admin/meta-boxes/sidebar/map.php");  // sidebar widget layout
+    require_once( QODE_FRAMEWORK_ROOT_DIR . "/admin/meta-boxes/seo/map.php");
 
     do_action('bridge_qode_action_meta_boxes_map');
   }
